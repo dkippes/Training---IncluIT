@@ -1,0 +1,20 @@
+service: process-transactions-sls
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  state: develop
+  region: us-west-2
+  memorySize: 128
+  runtime: nodejs12.x
+
+functions:
+  transactions:
+    handler: handler.main
+    events:
+      - http:
+          path: balance
+          method: post
+  

@@ -52,7 +52,13 @@ students = [
 ];
 
 
+
+
 /* FOR */
+/**
+ * @param  {} students=[]
+ * @param  {} minScore=0
+ */
 function students_ApprovedAtLeast_WithForLoop(students = [], minScore = 0) {
     let studentsApproved = [];
 
@@ -70,6 +76,10 @@ function students_ApprovedAtLeast_WithForLoop(students = [], minScore = 0) {
     return studentsApproved.sort(studentWithHigherScore);
 }
 
+/**
+ * @param  {String} studentA
+ * @param  {String} studentB
+ */
 function studentWithHigherScore(studentA, studentB) {
     // This function can sort an array ASC
     if(studentA.score < studentB.score) {
@@ -85,7 +95,7 @@ function capitalizeTheFirstLetterOf_(name) {
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
 }
 
-console.log(students_ApprovedAtLeast_WithForLoop(students, 4));
+//console.log(students_ApprovedAtLeast_WithForLoop(students, 4));
 
 /* WHILE */
 function students_ApprovedAtLeast_WithWhileLoop(students = [], minScore = 0) {
@@ -148,4 +158,4 @@ function students_ApprovedAtLeast_WithFilter(students = [], minScore = 0) {
     return studentsApproved.sort(studentWithHigherScore);
 }
 
-//console.log(students_ApprovedAtLeast_WithFilter(students, 4));
+console.log(students_ApprovedAtLeast_WithFilter(students, 4));

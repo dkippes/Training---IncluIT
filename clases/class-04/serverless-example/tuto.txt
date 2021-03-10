@@ -1,0 +1,2 @@
+npm install serverless-offline --save-dev
+sls offline

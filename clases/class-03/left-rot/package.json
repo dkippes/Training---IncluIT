@@ -1,0 +1,14 @@
+{
+  "name": "left-rot-diego-kippes",
+  "version": "1.2.1",
+  "description": "A left rotation operation on an array",
+  "main": "left_rot.js",
+  "keywords": [
+    "left rotation array"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Kippes",
+  "license": "ISC"
+}

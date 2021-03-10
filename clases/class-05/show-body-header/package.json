@@ -1,0 +1,10 @@
+{
+  "name": "exercise-class-04",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-offline": "^6.8.0"
+  }
+}

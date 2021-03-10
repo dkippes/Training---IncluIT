@@ -1,0 +1,10 @@
+npm i mocha chain --save-dev
+npm i nyc --save-dev
+
+"scripts": {
+    "test": "mocha || true",
+    "coverage": "nyc --reporter=html npm run test"
+  },
+
+npm run test
+npm run coverage

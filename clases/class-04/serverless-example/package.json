@@ -1,0 +1,10 @@
+{
+  "name": "exercise-class-04",
+  "version": "1.0.0",
+  "description": "Example to demostrate how works this framework",
+  "author": "Jonathan Brizio",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-offline": "^6.8.0"
+  }
+}

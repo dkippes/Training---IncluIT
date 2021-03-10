@@ -1,0 +1,8 @@
+1) java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+2) npx dynamodb-admin
+3) sls offline
+
+--Crear la tabla si no la tiene
+
+
+
