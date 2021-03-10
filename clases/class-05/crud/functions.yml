@@ -1,0 +1,22 @@
+getUserById:
+  handler: src/users/getAllUsers/index.getAllUsers
+  events:
+    - http:
+        path: users
+        method: get
+
+registerUser:
+  handler: src/users/register/index.registerUser
+  events:
+    - http:
+        path: users/register
+        method: post
+        cors: true
+
+loginUser:
+  handler: src/users/login/index.loginUser
+  events:
+    - http:
+        path: users/login
+        method: post
+        cors: true
