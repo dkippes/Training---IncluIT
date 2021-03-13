@@ -10,7 +10,7 @@ async function createUser(event, context) {
 	const Item = (typeof event.body === 'string') ? JSON.parse(event.body) : event.body;
     
 	await DocumentClient.put({
-        TableName: process.env.USERS_TABLE || 'users',
+        TableName: process.env.USERS_TABLE || 'usersAlan',
         Item
     }).promise();
 

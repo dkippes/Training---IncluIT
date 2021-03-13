@@ -10,7 +10,7 @@ async function getUserById(event, context) {
 	
 
 	const { Items } = await DocumentClient.query({
-		TableName: process.env.USERS || 'users',
+		TableName: process.env.USERS || 'usersAlan',
 		KeyConditionExpression: '#id = :id',
 		ExpressionAttributeNames: {
 			'#id': 'userId'
@@ -22,7 +22,10 @@ async function getUserById(event, context) {
 
 	return {
 		statusCode: 200,
-		body: JSON.stringify(Items)
+		body: JSON.stringify({
+			msg: "bien encontrado",
+			Item
+		})
 	};
 }
 

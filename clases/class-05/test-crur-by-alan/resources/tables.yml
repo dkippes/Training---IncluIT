@@ -18,7 +18,7 @@ Resources:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
       # Si tuvieramos nombres dinamicos (por ejemplo, segun ambiente, lo podemos configurar aca)
-      TableName: users
+      TableName: usersAlan
 
   UsersSimpleTable:
     Type: 'AWS::DynamoDB::Table'

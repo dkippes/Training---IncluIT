@@ -14,7 +14,9 @@ async function createToken(event, context) {
 }
 
 async function validateToken(event, context) {
-    const token = event.headers.authorization || '';
+    console.log(event.headers.Authorization);
+
+    const token = event.headers.Authorization || '';
 
     try {
         const user = jwt.decode(token, 'secret1');

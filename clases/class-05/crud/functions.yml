@@ -5,6 +5,7 @@ getUserById:
         path: users
         method: get
 
+
 registerUser:
   handler: src/users/register/index.registerUser
   events:
@@ -13,10 +14,37 @@ registerUser:
         method: post
         cors: true
 
+
 loginUser:
   handler: src/users/login/index.loginUser
   events:
     - http:
         path: users/login
+        method: post
+        cors: true
+
+updateUser:
+  handler: src/users/update/index.updateUser
+  events:
+    - http:
+        path: users/updateUser
+        method: post
+        cors: true
+
+
+deleteUser:
+  handler: src/users/delete/index.deleteUserByEmail
+  events:
+    - http:
+        path: users/deleteUser
+        method: post
+        cors: true
+
+
+welcomeUser:
+  handler: src/users/welcome/index.welcomeUser
+  events:
+    - http:
+        path: users/welcome
         method: post
         cors: true

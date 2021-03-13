@@ -42,7 +42,7 @@ async function validateAndCreate(event, context) {
     }
 
     await DocumentClient.put({
-        TableName: process.env.USERS || 'users',
+        TableName: process.env.USERS || 'usersAlan',
         Item
     }).promise();
 

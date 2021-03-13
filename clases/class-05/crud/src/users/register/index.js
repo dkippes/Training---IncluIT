@@ -1,30 +1,14 @@
 const AWS = require("aws-sdk");
-const Schemy = require("schemy");
 const codeResponse = require("../../utils/statusCode");
+const userSchema = require("../../utils/userSchema");
 
 AWS.config.update({
   region: "us-east-2",
   endpoint: "http://localhost:8000",
 });
 
-const userSchema = new Schemy({
-  id_user: {
-    type: Number,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-});
-
 async function registerUser(event, context) {
   const DocumentClient = new AWS.DynamoDB.DocumentClient();
-
 
   try {
     //Parsea la data
@@ -32,7 +16,7 @@ async function registerUser(event, context) {
       typeof event.body === "string" ? JSON.parse(event.body) : event.body;
 
     // Crea el item
-    let Item = {
+    const Item = {
       id_user: parseInt(Date.now() + Math.random()),
       email: data.email,
       password: data.password,
@@ -40,16 +24,12 @@ async function registerUser(event, context) {
 
     //Checkea si las keys estan correctas
     if (!userSchema.validate(Item)) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({
-          messages: userSchema.getValidationErrors(),
-        }),
-      };
+      return codeResponse(400, userSchema.getValidationErrors())
+      
     }
 
     // Se fija si el email ya esta registrado
-    let emailYaRegistrado = await DocumentClient.scan({
+    const emailYaRegistrado = await DocumentClient.scan({
       TableName: 'users',
       ExpressionAttributeValues: {
           ":e": Item.email

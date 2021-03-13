@@ -13,10 +13,18 @@ createUser:
         method: post
         cors: true
 
-validateAndCreate:
-  handler: validate/index.validateAndCreate
+createToken:
+  handler: login/index.createToken
   events:
     - http:
-        path: validate
+        path: createToken
+        method: post
+        cors: true
+
+validateToken:
+  handler: login/index.validateToken
+  events:
+    - http:
+        path: validateToken
         method: post
         cors: true
